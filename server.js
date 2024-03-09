@@ -3,7 +3,9 @@ const app = express();
 const db=require('./db');
 const bodyParser=require('body-parser');
 app.use(bodyParser.json()); //req.body
+require('dotenv').config();
 
+const PORT=process.env.PORT || 3000;
 
 
 app.get('/', function(req, res){
@@ -18,6 +20,8 @@ const menuItemRoutes=require('./routes/menuRoutes.js');
 app.use('/person', personRoutes);
 app.use('/menu', menuItemRoutes);
 
-app.listen(3000, ()=>{
+
+
+app.listen(PORT, ()=>{
    console.log("Server is running");
 });
