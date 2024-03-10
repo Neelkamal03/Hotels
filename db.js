@@ -1,10 +1,9 @@
 const mongoose=require('mongoose');
+require('dotenv').config();
 
-//Define the MongoDb connection URL
-//const mongoURL=process.env.MONGO_URL_LOCAL; //Replace hotels with database you want to access.
 //const mongoURL=process.env.MONGODB_URL;
-const mongoURL='mongodb+srv://kneel062:12345@cluster0.stfjyt1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-mongoose.connect(mongoURL, {}); 
+const mongoURL=process.env.MONGO_URL_LOCAL;
+mongoose.connect(mongoURL, {})
 
 //Get the default connection
 //Mongoose maintains a default connection object representing the MongoDB connection.
